@@ -1,0 +1,507 @@
+body {
+    background-color: #32323c;
+    font-family: "Montserrat", sans-serif;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #e6e6e6;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 1.4rem;
+    color: #b0b0b8;
+    text-align: center;
+}
+
+p {
+    font-size: 20px;
+    color: #e6e6e6;
+    font-family: "Montserrat", sans-serif;
+}
+
+.chapter-section {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    padding: 20px;
+    margin: 80px auto;
+    max-width: 800px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.chapter-section h2 {
+    font-family: "Montserrat", sans-serif;
+    font-size: 24px;
+    color: #e6e6e6;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #e6e6e6;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.chapter-section p {
+    font-family: "Montserrat", sans-serif;
+    font-size: 18px;
+    color: #e6e6e6;
+    line-height: 1.6;
+    margin: 0px;
+}
+
+/* Image Styles */
+
+#main-gallery-container {
+    margin-top: 50px;
+}
+
+#gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 75vw;
+    margin: 20px auto;
+}
+
+figure {
+    margin: 10px;
+    padding: 0px;
+    position: relative;
+}
+
+figure img {
+    width: 100%;
+}
+
+#gallery img {
+    padding: 0px;
+    border: 3px solid #fff;
+    box-shadow: 0px 0px 3px #ccc;
+    z-index: -1;
+    position: relative;
+    width: 100%;
+    height: 250px;
+    box-sizing: border-box;
+}
+
+figcaption {
+    background-color: rgba(255, 255, 255, 0.5);
+    width: 100%;
+    min-height: 20px;
+    text-align: center;
+    color: #5e423f;
+    z-index: 1;
+    padding: 9px 0px 11px 0px;
+    font-size: 15px;
+    position: absolute;
+    bottom: 6px;
+}
+
+@media (max-width: 600px) {
+    figcaption {
+        font-size: 3vw;
+    }
+
+    #gallery {
+        grid-template-columns: 1fr !important;
+        width: 90vw !important;
+    }
+}
+
+@media (max-width: 1024px) {
+    figcaption {
+        font-size: 1.2vw;
+    }
+
+    #gallery {
+        grid-template-columns: 1fr 1fr;
+        width: 85vw;
+    }
+}
+
+/* Navigation Styles */
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 0px;
+    z-index: 1000;
+    background-color: rgba(50, 50, 60, 0.95);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.52);
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav li {
+    margin: 0 15px;
+}
+
+nav a {
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+    color: #e6e6e6;
+    text-decoration: none;
+    transition: color 0.3s, border-bottom 0.3s;
+    padding-bottom: 5px;
+    position: relative;
+}
+
+nav a:hover {
+    color: #1b1b20;
+    border-bottom: 2px solid #e6e6e6;
+}
+
+/* Header Section Styles */
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    padding: 2rem;
+    padding-top: 60px;
+    background-image: url("images/yacht.avif");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 0;
+}
+
+.header-content,
+.button-container {
+    position: relative;
+    z-index: 1;
+}
+
+/* Header Section Styles - Button */
+
+button {
+    text-transform: uppercase;
+    position: relative;
+    border: none;
+    font-size: 18px;
+    transform: 0.2s;
+    background-color: 0.2s;
+    outline: none;
+    border-radius: 3px;
+    margin: 0 10px;
+    padding: 23px 33px;
+    border: 3px solid transparent;
+}
+
+button:active {
+    transform: translate(3px);
+}
+
+button::after,
+button::after {
+    border-radius: 3px;
+}
+
+.shrink-border {
+    background-color: transparent;
+    color: #d3d3d3;
+}
+
+.shrink-border:hover {
+    background-color: transparent;
+    box-shadow: none;
+    color: #e6e6e6;
+}
+
+.shrink-border::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 3px solid #959595;
+    transition: opacity 0.3s, border 0.3s;
+}
+
+.shrink-border:hover:before {
+    opacity: 0;
+}
+
+.shrink-border::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    border: 3px solid #e6e6e6;
+    opacity: 0;
+    z-index: -1;
+    transform: scaleX(1.1) scaleY(1.3);
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+.shrink-border:hover::after {
+    opacity: 1;
+    transform: scaleX(1) scaleY(1);
+}
+
+/* Contact Form Styles */
+
+.contact {
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    margin: 80px auto;
+    max-width: 800px;
+    margin-bottom: 40vh;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.contact h2 {
+    font-family: "Montserrat", sans-serif;
+    font-size: 24px;
+    color: #e6e6e6;
+    margin-bottom: 20px;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.contact form {
+    font-family: "Montserrat", sans-serif;
+    font-size: 18px;
+    color: #e6e6e6;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.contact input {
+    font-family: "Montserrat", sans-serif;
+    font-size: 18px;
+    color: #848484;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Footer Section Styles */
+
+footer {
+    background-color: #1b1b20;
+    padding: 40px 0;
+    color: #e6e6e6;
+}
+
+.footer-content {
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-links {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.footer-links a {
+    color: #e6e6e6;
+    text-decoration: none;
+    transform: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: rgba(255, 255, 255, 0.2);
+    text-decoration: none;
+    transform: color 0.3s;
+}
+
+.footer-social {
+    margin-top: 0;
+}
+
+.footer-social a {
+    color: #e6e6e6;
+    font-size: 24px;
+    margin: 0 10px;
+    text-decoration: none;
+    transform: color 0.3s;
+}
+
+.footer-social a:hover {
+    color: rgba(255, 255, 255, 0.2);
+    text-decoration: none;
+    transform: color 0.3s;
+}
+
+/* About Us Styles */
+
+.two-column-container {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 70px;
+    margin-bottom: 50px;
+}
+
+.column {
+    flex-basis: 48%;
+}
+
+.column img {
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    margin: 80px auto;
+    max-width: 800px;
+}
+
+@media (max-width: 1024px) {
+    .two-column-container {
+        flex-direction: column;
+        align-items: center;
+        margin: 40px auto;
+        padding: 0 20px;
+    }
+
+    .column {
+        flex-basis: 100%;
+        max-width: 100%;
+    }
+
+    .column img {
+        margin: 40px auto;
+        padding: 0;
+    }
+}
+
+@media (max-width: 600px) {
+    .chapter-section h2 {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    .chapter-section p {
+        font-size: 1rem;
+        text-align: justify;
+        line-height: 1.6;
+    }
+
+    .call-to-action h2 {
+        font-size: 1.3rem;
+    }
+
+    .call-to-action button {
+        font-size: 1rem;
+        padding: 12px 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .column img {
+        max-height: 300px;
+        object-fit: cover;
+    }
+}
+
+
+/* Call to action section */
+
+.call-to-action {
+    background-color: rgba(75, 186, 253, 0.17);
+    text-align: center;
+    padding: 50px 20px;
+}
+
+/* This is the tours section */
+
+.tour-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.tour-button {
+    align-self: flex-end;
+}
+
+
+.tour-button-container {
+    text-align: right;
+    margin-top: 10px;
+}
+
+.tour-button {
+    text-transform: uppercase;
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+    color: #fff;
+    background-color: #1b1b20;
+    border: none;
+    border-radius: 3px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.tour-button:hover {
+    background-color: #2b6289;
+}
+
+/* Practice 
+
+img {
+    width: 100%;
+    max-width: 900px;
+    display: block;
+    margin: auto;
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    color: #6b4e2f;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+p {
+    font-size: 1.1rem;
+    max-width: 800px;
+    margin: auto;
+}
+
+#descovery {
+    border: 20px outset #a7b8fa;
+    padding: 10px;
+}
+
+#images {
+    border: 10px outset #a7e77e;
+    padding: 10px;
+}
+
+div {
+    border: 5px outset blue;
+    padding: 30px;
+}
+
+Practice */
